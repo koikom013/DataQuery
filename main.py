@@ -1,11 +1,18 @@
 import streamlit as st
 import pandas as pd
 
+from utils import wrangle
+import pickle
+import sys
+import path
+
+dir = path.Path(__file__).abspath()
+sys.append.path(dir.parent.parent)
 
 
 #Functions
 def load_data():
-    filename = 'data\Claim_Record_Query.csv'
+    filename = './data/Claim_Record_Query.csv'
     data = pd.read_csv(filename,header=1)
     data = data.replace(',','', regex=True)
     return data
