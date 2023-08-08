@@ -4,7 +4,7 @@ import pandas as pd
 
 
 import sys
-import path
+from path import Path
 
 dir = path.Path(__file__).abspath()
 sys.append.path(dir.parent.parent)
