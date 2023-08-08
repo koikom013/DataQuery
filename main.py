@@ -115,7 +115,7 @@ with tab[0]:
 
 #--------------TSI--------------------------------------        
 
-df_tsi = pd.read_csv('./data/tsi_list.csv')
+df_tsi = pd.read_csv('.\data\tsi_list.csv')
 
 
 with tab[1]:
