@@ -3,11 +3,11 @@ import pandas as pd
 
 
 
-import sys
-from path import Path
+# import sys
+# from path import Path
 
-dir = path.Path(__file__).abspath()
-sys.append.path(dir.parent.parent)
+# dir = path.Path(__file__).abspath()
+# sys.append.path(dir.parent.parent)
 
 
 #Functions
