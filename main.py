@@ -176,5 +176,4 @@ with tab[1]:
         
         
 
-if __name__=='__main__':
-    data = load_data()
+
