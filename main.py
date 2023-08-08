@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+import utils
 from utils import wrangle
 import pickle
 import sys
