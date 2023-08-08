@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-from object_detection.utils import wrangle
-import pickle
+
+
 import sys
 import path
 
