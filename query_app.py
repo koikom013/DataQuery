@@ -8,34 +8,40 @@ def tsi_main():
 
     uploaded_file = st.sidebar.file_uploader("Upload a TSI file", type=["xlsx","csv"])
 
-    
     if uploaded_file is not None:
         
         try:
-            # Read the uploaded CSV or XLSX file into a Pandas DataFrame
+            # Read the uploaded CSV file into a Pandas DataFrame
             if 'df_tsi' not in st.session_state:
-                if uploaded_file.endswith('xlsx'):
+                if uploaded_file.name.endswith("xlsx"):
                     st.session_state['df_tsi'] = pd.read_excel(uploaded_file)
+                    df = st.session_state['df_tsi']
                 else:
                     st.session_state['df_tsi'] = pd.read_csv(uploaded_file)
-                    
-                df = st.session_state['df_tsi']
+                    df = st.session_state['df_tsi']
+
+                
             else:
                 df = st.session_state['df_tsi']
+
+            return df
             
             st.sidebar.success('TSI Loaded Successfully')
-            
 
+            
+        
             
 
         except Exception as e:
             st.sidebar.error(f"An error occurred: {e}")
 
-    else:
-        df = []
-        st.sidebar.error('Upload TSI File')
+        
 
-    return df
+    else:
+        
+        st.sidebar.error('Upload TSI File')
+    
+    
 
 def query_tsi():
 
@@ -93,7 +99,7 @@ def query_tsi():
             st.write('Input TSI Number')
 
         
-
+    
     with tab[1]:
         st.header('TSI Record')
         st.dataframe(df)
