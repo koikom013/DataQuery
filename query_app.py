@@ -8,18 +8,22 @@ def tsi_main():
 
     uploaded_file = st.sidebar.file_uploader("Upload a TSI file", type=["xlsx"])
 
+    
     if uploaded_file is not None:
         
         try:
             # Read the uploaded CSV file into a Pandas DataFrame
             if 'df_tsi' not in st.session_state:
-                st.session_state['df_tsi'] = pd.read_excel(uploaded_file)
+                if uploaded_file.endswith('xlsx'):
+                    st.session_state['df_tsi'] = pd.read_excel(uploaded_file)
+                else:
+                    st.session_state['df_tsi'] = pd.read_csv(uploaded_file)
+                    
                 df = st.session_state['df_tsi']
             else:
                 df = st.session_state['df_tsi']
             
             st.sidebar.success('TSI Loaded Successfully')
-
             
 
             
