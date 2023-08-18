@@ -12,7 +12,7 @@ def tsi_main():
     if uploaded_file is not None:
         
         try:
-            # Read the uploaded CSV file into a Pandas DataFrame
+            # Read the uploaded CSV or XLSX file into a Pandas DataFrame
             if 'df_tsi' not in st.session_state:
                 if uploaded_file.endswith('xlsx'):
                     st.session_state['df_tsi'] = pd.read_excel(uploaded_file)
