@@ -6,7 +6,7 @@ st.set_page_config(layout='wide')
 def tsi_main():
     st.title("TSI Evaluation")
 
-    uploaded_file = st.sidebar.file_uploader("Upload a TSI file", type=["xlsx","csv])
+    uploaded_file = st.sidebar.file_uploader("Upload a TSI file", type=["xlsx","csv"])
 
     
     if uploaded_file is not None:
