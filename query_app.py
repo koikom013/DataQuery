@@ -12,8 +12,12 @@ def tsi_main():
         
         try:
             # Read the uploaded CSV file into a Pandas DataFrame
+            if 'df_tsi' not in st.session_state:
+                st.session_state['df_tsi'] = pd.read_excel(uploaded_file)
+                df = st.session_state['df_tsi']
+            else:
+                df = st.session_state['df_tsi']
             
-            df = pd.read_excel(uploaded_file)
             st.sidebar.success('TSI Loaded Successfully')
 
             
